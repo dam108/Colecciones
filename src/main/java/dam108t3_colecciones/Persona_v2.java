@@ -42,10 +42,6 @@ public class Persona_v2 {
         return true;
     }
 
-
-
-
-
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", telefono=" + telefono + ", email=" + email + ", fechaNac=" + fechaNac + '}';
