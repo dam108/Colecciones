@@ -37,7 +37,7 @@ public class dam108t3e0113 {
                 if (cola.getFirst() == 0) {
                     cola.removeFirst();
                     contAtendido++;
-                    System.out.println("clietne atendido en cola 1 nº: " + contAtendido);
+//                    System.out.println("clietne atendido en cola 1 nº: " + contAtendido);
                 }
                 if (cola.size() > 5) {
                     //                    System.out.println("Esta persona se ha ido, porque tiene a 5 personas delante y no puede esperar tanto tiempo.");
@@ -50,7 +50,7 @@ public class dam108t3e0113 {
                 if (cola2.getFirst() == 0) {
                     cola2.removeFirst();
                     contAtendido++;
-                    System.out.println("clietne atendido atendido en cola2 nº: " + contAtendido);
+//                    System.out.println("clietne atendido atendido en cola2 nº: " + contAtendido);
                 }
                 if (cola2.size() > 5) {
                     //                    System.out.println("Esta persona se ha ido, porque tiene a 5 personas delante y no puede esperar tanto tiempo.");
@@ -72,7 +72,6 @@ public class dam108t3e0113 {
                 //se genera el instante de llegada del próximo cliente
                 instanteSiguCliente += random.nextInt(5) + 3;
             }
-            mostrarCola();
         }
         mostrarInfoFinal();
     }
