@@ -10,7 +10,7 @@ package dam108t3_colecciones;
 import java.time.LocalDate;
 import java.util.*;
 
-public class dam108t2e0109 {
+public class dam108t3e0109 {
     public static Scanner teclado = new Scanner(System.in);
     public static ArrayList<Integer> temperaturas = new ArrayList<>();
     public static TreeMap<Integer, Integer> distribucion = new TreeMap<>();
