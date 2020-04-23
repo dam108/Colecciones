@@ -1,9 +1,10 @@
 package dam108t3_colecciones;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Persona_v3 implements Comparable { // implementamos la interfaz Comparable para poder sobreescribir el metodo compareTo
+public class Persona_v4{
     String DNI;
     String nombre;
     int telefono;
@@ -11,7 +12,7 @@ public class Persona_v3 implements Comparable { // implementamos la interfaz Com
     LocalDate fechaNac;
     
     /*CONTRUCTOR*/
-    Persona_v3(String dni, String n, int t, String e, String f){
+    Persona_v4(String dni, String n, int t, String e, String f){
         this.DNI = dni;
         this.nombre = n;
         this.telefono = t;
@@ -37,7 +38,7 @@ public class Persona_v3 implements Comparable { // implementamos la interfaz Com
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Persona_v3 other = (Persona_v3) obj;
+        final Persona_v4 other = (Persona_v4) obj;
         if (!Objects.equals(this.DNI, other.DNI)) {
             return false;
         }
@@ -50,12 +51,24 @@ public class Persona_v3 implements Comparable { // implementamos la interfaz Com
     public String toString() {
         return "Persona_v3{" + "DNI=" + DNI + ", nombre=" + nombre + ", telefono=" + telefono + ", email=" + email + ", fechaNac=" + fechaNac + '}';
     }
+    
+}
 
-    @Override
-    public int compareTo(Object o ){ // sobreescibimos el metodo compareTo para poder ordenar por fecha
-        Persona_v3 other = (Persona_v3) o; // creamos un objeto para comparar
-        return this.fechaNac.compareTo(other.fechaNac); // se devuelve un entero para comparar , negativo o positivo y asi collection sort o el for each decide el orden
+// creamos la clase comparaEdad que implementa comparator para hacer un metodo
+// que devuelve un entero positivo o negativo con la diferencia entre varias fechas
+class CompararEdad implements Comparator {
+    public int compare(Object o1, Object o2){
+        Persona_v4 p1 = (Persona_v4) o1;
+        Persona_v4 p2 = (Persona_v4) o2;
+        return p1.fechaNac.compareTo(p2.fechaNac);
     }
-    
-    
+}
+// creamos la clase comparaEmail que implementa comparator para hacer un metodo
+// que devuelve un entero positivo o negativo con la diferencia entre emails
+class CompararEmail implements Comparator{
+    public int compare (Object o1, Object o2){
+        Persona_v4 p1 = (Persona_v4) o1;
+        Persona_v4 p2 = (Persona_v4) o2;
+        return p1.email.compareToIgnoreCase(p2.email);
+    }
 }
