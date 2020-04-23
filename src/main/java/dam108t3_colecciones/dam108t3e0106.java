@@ -6,10 +6,13 @@ jugador, consultar el salario de un jugador e incrementar el salario un 10% a un
 package dam108t3_colecciones;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 public class dam108t3e0106 {
     public static HashMap<String, Double> jugadores = new HashMap<>();
+    public static Iterator<String> iter;
     public static Scanner teclado = new Scanner(System.in);
     public static void main(String[] args) {
         int opcion = 0;
@@ -19,17 +22,25 @@ public class dam108t3e0106 {
             if (opcion !=0){
                 ejecutarOpcion(opcion);
             }
+
         }while(opcion != 0);
+//        mostrarEquipo();
     }
 
     public static void ejecutarOpcion(int op){
         System.out.println("Introduce nombre:");
-        String nom = teclado.nextLine();teclado.nextLine();        
+        teclado.nextLine();String nom = teclado.nextLine();        
         switch(op){
             case 1: añadirJug(nom) ;break;
             case 2: eliminarJug(nom) ;break;
             case 3: consultarSalarioJug(nom);break;
             case 4: incrementarSalarioJug(nom);break;
+        }
+    }
+    
+    public static void mostrarEquipo(){
+        for (String k : jugadores.keySet()) {
+            System.out.println(k + " tiene: "+ jugadores.get(k)+" dineros");
         }
     }
     
