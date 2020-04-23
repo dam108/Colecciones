@@ -14,7 +14,7 @@ public class dam108t3e0117 {
         personas = new ArrayList<>();
         CompararEmail cem = new CompararEmail();
         CompararEdad ced = new CompararEdad();
-        rellenarTreeMap();
+        rellenarArrayList();
         
         
         // mostar Odenadas por email
@@ -35,7 +35,7 @@ public class dam108t3e0117 {
     
     }
 
-    public static void rellenarTreeMap() {
+    public static void rellenarArrayList() {
         personas.add(new Persona_v4(
                 "48662598V", "Juan", 981235689, "juan@gmail.com", "1987-02-01"));
         personas.add(new Persona_v4(
