@@ -29,8 +29,8 @@ public class dam108t3e0107 {
         if(jugadores.size() < 25){
             System.out.println("Introduce nombre:");
             teclado.nextLine();
-            String nom = teclado.nextLine(); 
-            System.out.println(nom);
+            String nom = teclado.nextLine();
+//            System.out.println(nom);
             System.out.println("Introduce salario");
             double sal = teclado.nextDouble();
             jugadores.put(nom, sal);
